@@ -1,4 +1,7 @@
 ## Setting up a Deep Learning Machine from Scratch (Software)
+
+** This is an edited version of the [original guide](https://github.com/floydhub/dl-setup) and I will use it as a notebook for later reference while setting up Deep Learning on an Ubuntu 16.04 system. **
+
 A detailed guide to setting up your machine for deep learning research. Includes instructions to install drivers, tools and various deep learning frameworks. This was tested on a 64 bit machine with Nvidia Titan X, running Ubuntu 14.04
 
 There are several great guides with a similar goal. Some are limited in scope, while others are not up to date. This guide is based on (with some portions copied verbatim from):
@@ -84,9 +87,9 @@ There are several great guides with a similar goal. Some are limited in scope, w
         bin/x86_64/linux/release/deviceQuery
         
 ### cuDNN
-* cuDNN is a GPU accelerated library for DNNs. It can help speed up execution in many cases. To be able to download the cuDNN library, you need to register in the Nvidia website at [https://developer.nvidia.com/cudnn](https://developer.nvidia.com/cudnn). This can take anywhere between a few hours to a couple of working days to get approved. Once your registration is approved, download **cuDNN v4 for Linux**. The latest version is cuDNN v5, however, not all toolkits support it yet.
+* cuDNN is a GPU accelerated library for DNNs. It can help speed up execution in many cases. To be able to download the cuDNN library, you need to register in the Nvidia website at [https://developer.nvidia.com/cudnn](https://developer.nvidia.com/cudnn). This can take anywhere between a few hours to a couple of working days to get approved. Once your registration is approved, 
 
-* As the website suggested cuDNN version > 5 should be used for GPUs with a Pascal architecture. There are deb packages for Ubuntu 16.04, that can be installed using the following commands:
+* As the website suggested cuDNN version > 5 should be used for GPUs with a Pascal architecture. There are deb packages for Ubuntu 14.04 and 16.04. These can be installed like so:
 	
 Install Runtime library:
 
@@ -100,17 +103,20 @@ Install code samples and user guide:
 
 	sudo dpkg -i $(document library deb)
 
+---------
 	
+	download **cuDNN v4 for Linux**. The latest version is cuDNN v5, however, not all toolkits support it yet.
 
-* Extract and copy the files
+	* Extract and copy the files
 
-        cd ~/Downloads/
-        tar xvf cudnn*.tgz
-        cd cuda
-        sudo cp */*.h /usr/local/cuda/include/
-        sudo cp */libcudnn* /usr/local/cuda/lib64/
-        sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
-        
+        	cd ~/Downloads/
+	        tar xvf cudnn*.tgz
+	        cd cuda
+	        sudo cp */*.h /usr/local/cuda/include/
+    	    	sudo cp */libcudnn* /usr/local/cuda/lib64/
+       		sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
+ ---------
+ 
 ### Check
 * You can do a check to ensure everything is good so far using the `nvidia-smi` command. This should output some stats about your GPU
 
