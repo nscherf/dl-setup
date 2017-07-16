@@ -128,7 +128,9 @@ Install code samples and user guide:
 		                                python-pandas python-sklearn python-sympy
         sudo apt-get clean && sudo apt-get autoremove
         rm -rf /var/lib/apt/lists/*
- 
+
+### Python Anaconda 
+* Install Miniconda. 
 
 ### Tensorflow
 * This installs v0.8 with GPU support. Instructions below are from [here](https://www.tensorflow.org/versions/r0.8/get_started/os_setup.html)
