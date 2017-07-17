@@ -200,6 +200,8 @@ download **cuDNN v5 for Linux**. *The latest version is cuDNN v5, however, not a
         make all -j $(($(nproc) + 1))
         make test -j $(($(nproc) + 1))
         make runtest -j $(($(nproc) + 1))
+	
+ * if you encounter issues with hdf5.h not being found: see this [thread](https://github.com/BVLC/caffe/issues/2347) for a solution 
 
 * Build PyCaffe, the Python interface to Caffe
 
