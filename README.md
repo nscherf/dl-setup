@@ -90,7 +90,10 @@ There are several great guides with a similar goal. Some are limited in scope, w
 * cuDNN is a GPU accelerated library for DNNs. It can help speed up execution in many cases. To be able to download the cuDNN library, you need to register in the Nvidia website at [https://developer.nvidia.com/cudnn](https://developer.nvidia.com/cudnn). This can take anywhere between a few hours to a couple of working days to get approved. Once your registration is approved, 
 
 * As the website suggested cuDNN version > 5 should be used for GPUs with a Pascal architecture. There are deb packages for Ubuntu 14.04 and 16.04. These can be installed like so:
-	
+
+------------
+this didnt work for me: 
+
 Install Runtime library:
 
 	sudo dpkg -i $(runtime library deb)
@@ -105,16 +108,16 @@ Install code samples and user guide:
 
 ---------
 	
-	download **cuDNN v4 for Linux**. The latest version is cuDNN v5, however, not all toolkits support it yet.
+download **cuDNN v5 for Linux**. *The latest version is cuDNN v5, however, not all toolkits support it yet.*
 
-	* Extract and copy the files
+* Extract and copy the files
 
-        	cd ~/Downloads/
-	        tar xvf cudnn*.tgz
-	        cd cuda
-	        sudo cp */*.h /usr/local/cuda/include/
-    	    	sudo cp */libcudnn* /usr/local/cuda/lib64/
-       		sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
+	cd ~/Downloads/
+	tar xvf cudnn*.tgz
+	cd cuda
+	sudo cp -P */*.h /usr/local/cuda/include/
+	sudo cp -P */libcudnn* /usr/local/cuda/lib64/
+	sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
  ---------
  
 ### Check
